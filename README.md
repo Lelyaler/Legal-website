@@ -1,5 +1,5 @@
-# Cyberpunk-website
-## https://lelyaler.github.io/Cyberpunk-website/ .
+# Legal-website
+## https://lelyaler.github.io/Legal-website/
 
 ### 💻 About :
 The website is a single-landing page.
