@@ -6,7 +6,7 @@ The website is a single-landing page.
 
 - Swiper slider is used
 
-- Adaptable down to 320px: The design responds effectively to screens as small as 320px.
+- Adaptable down to 320px: The design effectively adapts to screens as small as 320px
 
 - Shared Reusable Styles: Reusable styles are organized within the header's style.css to enhance efficiency
 
