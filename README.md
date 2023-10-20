@@ -5,6 +5,8 @@
 The website is a single-landing page.
 
 - Swiper slider is used
+  
+- On the website, there is a burger menu.
 
 - Adaptable down to 320px: The design effectively adapts to screens as small as 320px
 
