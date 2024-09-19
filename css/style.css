@@ -228,7 +228,15 @@ img {
 
 .intro {
   position: relative;
-  background-image: url(../images/header\ intro/bg-imggg.webp);
+  background-image: url(../images/header-intro/bg-imggg.webp);
+  background-image: -webkit-image-set(
+    url("../images/header-intro/bg-imggg.avif") 1x,
+    url("../images/header-intro/bg-imggg.webp") 1x
+  );
+  background-image: image-set(
+    url("../images/header-intro/bg-imggg.avif") 1x,
+    url("../images/header-intro/bg-imggg.webp") 1x
+  );
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -377,7 +385,7 @@ img {
   transform: translate(-50%, -50%);
   width: 36px;
   height: 35px;
-  background: url(/images/services/agreement.svg) center center no-repeat;
+  background: url(../images/services/agreement.svg) center center no-repeat;
   background-size: cover;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -605,7 +613,7 @@ img {
 
 .reviews {
   padding: 80px 0px;
-  background-image: url(/images/reviews/Фон\ блока.jpg);
+  background-image: url(../images/reviews/Фон\ блока.jpg);
   background-repeat: no-repeat;
   background-position: center bottom;
 }
@@ -667,7 +675,7 @@ img {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(/images/reviews/game-icons_feather.svg);
+  background-image: url(../images/reviews/game-icons_feather.svg);
   background-repeat: no-repeat;
 }
 
@@ -729,7 +737,7 @@ img {
   top: 43%;
   left: 45%;
 
-  background-image: url(/images/news/Group\ 9.svg);
+  background-image: url(../images/news/Group\ 9.svg);
   background-position: center;
   background-repeat: no-repeat;
 }
