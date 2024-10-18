@@ -328,6 +328,11 @@ img {
   padding: 0;
   cursor: pointer;
 }
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
 
 /*--------------------------------------------------------------------------*/
 
