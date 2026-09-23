@@ -3,19 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ЮрГарант — профессиональные юридические услуги для физических и юридических лиц. Квалифицированная помощь и надежная защита ваших интересов."
+    />
+    <link rel="shortcut icon" href="images/header-intro/phone.svg" />
+    <title>ЮрГарант — Профессиональные юридические услуги</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.1/swiper-bundle.css"
-      integrity="sha512-LZuATklLAriQzj14UjkY1lvEvVJNOQLjuQ34tn7+/RU/mv0bgmkEyMROrbOoAIAAK80JE1rcm35kpHjaBvLNoA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap"
+      />
+    </noscript>
+    <link
+      rel="preload"
+      href="images/header-intro/bg-imggg-mobile.webp"
+      as="image"
+      type="image/webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/header-intro/bg-imggg.webp"
+      as="image"
+      type="image/webp"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="stylesheet"
+      href="swiper/swiper-bundle.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    </noscript>
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
   </head>
   <body>
     <div class="wrapper">
@@ -28,6 +66,8 @@
                   class="header__icon"
                   src="images/header-intro/phone.svg"
                   alt="phone icon"
+                  width="20"
+                  height="20"
                 />
                 <a class="header__text" href="#">+7 (922) 022-94-82</a>
               </div>
@@ -35,7 +75,9 @@
                 <img
                   class="header__icon"
                   src="images/header-intro/mail.svg"
-                  alt="maill icon"
+                  alt="mail icon"
+                  width="20"
+                  height="20"
                 />
                 <a class="header__text" href="#">janis62@yahoo.com</a>
               </div>
@@ -48,9 +90,9 @@
             <div class="header__logo">
               <span class="logo">ЮрГарант</span>
             </div>
-            <div class="burger">
-              <span class="burger__item">Menu</span>
-            </div>
+            <button class="burger" aria-label="Открыть меню" type="button">
+              <span class="burger__item"></span>
+            </button>
             <nav class="header__menu">
               <ul class="menu__items">
                 <li class="menu__item">
@@ -82,9 +124,9 @@
         <section class="intro">
           <div class="intro__container container">
             <div class="intro__content">
-              <h2 class="intro__subtitle">
+              <p class="intro__subtitle">
                 Мы предлагаем полный спектр юридических услуг
-              </h2>
+              </p>
               <h1 class="intro__title">Правовой Компас</h1>
               <p class="intro__text">
                 Профессиональная помощь по любым правовым вопросам. Наша команда
@@ -93,28 +135,32 @@
                 интересов. Мы работаем, чтобы вы могли быть уверены в завтрашнем
                 дне!
               </p>
-              <button class="intro__button button">
-                <a href="#">Наши услуги</a>
-              </button>
+              <a href="#" class="intro__button button">Наши услуги</a>
             </div>
             <div class="intro__buttons">
               <div class="intro__line">
                 <img
                   src="images/header-intro/булеты навигации слайдера.svg"
-                  alt="Line"
+                  alt="Индикатор слайдов"
+                  width="28"
+                  height="40"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="intro__btn">
-                <button class="intro__arrow">
-                  <img src="images/header-intro/arrowleft.svg" alt="arrow" />
+                <button class="intro__arrow" aria-label="Предыдущий слайд">
+                  <img src="images/header-intro/arrowleft.svg" alt="arrow" width="21" height="20" />
                 </button>
                 <img
                   class="intro__slash"
                   src="images/header-intro/Line 3.svg"
                   alt="slash"
+                  width="16"
+                  height="31"
                 />
-                <button class="intro__arrow">
-                  <img src="images/header-intro/arrowright.svg" alt="arrow" />
+                <button class="intro__arrow" aria-label="Следующий слайд">
+                  <img src="images/header-intro/arrowright.svg" alt="arrow" width="20" height="20" />
                 </button>
               </div>
             </div>
@@ -124,7 +170,7 @@
         <section class="services">
           <div class="services__container container">
             <div class="primary__title">
-              <h1 class="title">Наши услуги</h1>
+              <h2 class="title">Наши услуги</h2>
               <p class="primary__text">
                 Давно выяснено, что при оценке дизайна и композиции читаемый
                 текст мешает сосредоточиться. Lorem Ipsum используют потому, что
@@ -136,7 +182,11 @@
                 <div class="item__icon">
                   <img
                     src="images/services/agreement blue.svg"
-                    alt="agreement"
+                    alt="Иконка услуги"
+                    width="36"
+                    height="35"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h2 class="item__title">Банкротство физических лиц</h2>
@@ -155,7 +205,11 @@
                 <div class="item__icon">
                   <img
                     src="images/services/agreement blue.svg"
-                    alt="agreement"
+                    alt="Иконка услуги"
+                    width="36"
+                    height="35"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h2 class="item__title">Сопровождение сделок</h2>
@@ -174,7 +228,11 @@
                 <div class="item__icon">
                   <img
                     src="images/services/agreement blue.svg"
-                    alt="agreement"
+                    alt="Иконка услуги"
+                    width="36"
+                    height="35"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h2 class="item__title">Корпоративные споры</h2>
@@ -193,7 +251,11 @@
                 <div class="item__icon">
                   <img
                     src="images/services/agreement blue.svg"
-                    alt="agreement"
+                    alt="Иконка услуги"
+                    width="36"
+                    height="35"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h2 class="item__title">Недвижимость и строительство</h2>
@@ -212,7 +274,11 @@
                 <div class="item__icon">
                   <img
                     src="images/services/agreement blue.svg"
-                    alt="agreement"
+                    alt="Иконка услуги"
+                    width="36"
+                    height="35"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h2 class="item__title">Возврат страховых премий</h2>
@@ -232,7 +298,11 @@
                 <div class="item__icon">
                   <img
                     src="images/services/agreement blue.svg"
-                    alt="agreement"
+                    alt="Иконка услуги"
+                    width="36"
+                    height="35"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h2 class="item__title">Налоговое право и споры</h2>
@@ -255,7 +325,11 @@
                     <div class="item__icon">
                       <img
                         src="images/services/agreement blue.svg"
-                        alt="agreement"
+                        alt="Иконка услуги"
+                        width="36"
+                        height="35"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <h2 class="item__title">Банкротство физических лиц</h2>
@@ -274,7 +348,11 @@
                     <div class="item__icon">
                       <img
                         src="images/services/agreement blue.svg"
-                        alt="agreement"
+                        alt="Иконка услуги"
+                        width="36"
+                        height="35"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <h2 class="item__title">Сопровождение сделок</h2>
@@ -294,7 +372,11 @@
                     <div class="item__icon">
                       <img
                         src="images/services/agreement blue.svg"
-                        alt="agreement"
+                        alt="Иконка услуги"
+                        width="36"
+                        height="35"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <h2 class="item__title">Корпоративные споры</h2>
@@ -313,7 +395,11 @@
                     <div class="item__icon">
                       <img
                         src="images/services/agreement blue.svg"
-                        alt="agreement"
+                        alt="Иконка услуги"
+                        width="36"
+                        height="35"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <h2 class="item__title">Недвижимость и строительство</h2>
@@ -333,7 +419,11 @@
                     <div class="item__icon">
                       <img
                         src="images/services/agreement blue.svg"
-                        alt="agreement"
+                        alt="Иконка услуги"
+                        width="36"
+                        height="35"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <h2 class="item__title">Возврат страховых премий</h2>
@@ -353,7 +443,11 @@
                     <div class="item__icon">
                       <img
                         src="images/services/agreement blue.svg"
-                        alt="agreement"
+                        alt="Иконка услуги"
+                        width="36"
+                        height="35"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <h2 class="item__title">Налоговое право и споры</h2>
@@ -371,9 +465,7 @@
                 </div>
               </div>
             </div>
-            <button class="services__button button">
-              <a href="#">Все услуги</a>
-            </button>
+            <a href="#" class="services__button button">Все услуги</a>
           </div>
         </section>
         <section class="info">
@@ -399,22 +491,25 @@
                 Некоторые версии появились по ошибке, некоторые - намеренно
                 (например, юмористические варианты).
               </p>
-              <button class="button__right button">
-                <a href="#">История компании</a>
-              </button>
-              <button class="button__left button">
-                <a href="#">Сертификаты</a>
-              </button>
+              <a href="#" class="button__right button">История компании</a>
+              <a href="#" class="button__left button">Сертификаты</a>
             </div>
             <div class="info__image">
-              <img src="images/info/Rectangle 15.jpg" alt="info book" />
+              <img
+                src="images/info/Rectangle 15.webp"
+                alt="Юридическая литература и документы"
+                width="535"
+                height="359"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </section>
         <section class="about">
           <div class="container">
             <div class="primary__title">
-              <h1 class="title">Наши юристы</h1>
+              <h2 class="title">Наши юристы</h2>
               <p class="primary__text">
                 Давно выяснено, что при оценке дизайна и композиции читаемый
                 текст мешает сосредоточиться. Lorem Ipsum используют потому, что
@@ -424,9 +519,16 @@
             <div class="about__slider">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <article class="swiper-slide team__card">
+                  <div class="swiper-slide team__card">
                     <div class="team__card-hover">
-                      <img src="images/about/1.png" alt="photo" />
+                      <img
+                        src="images/about/1.webp"
+                        alt="Горюнова Полина Алексеевна"
+                        width="312"
+                        height="320"
+                        loading="lazy"
+                        decoding="async"
+                      />
                       <div class="team-cards">
                         <h2 class="team-card__title">
                           Горюнова Полина Алексеевна
@@ -455,10 +557,17 @@
                         </div>
                       </div>
                     </div>
-                  </article>
-                  <article class="swiper-slide team__card">
+                  </div>
+                  <div class="swiper-slide team__card">
                     <div class="team__card-hover">
-                      <img src="images/about/2.png" alt="photo" />
+                      <img
+                        src="images/about/2.webp"
+                        alt="Миронов Александр Германович"
+                        width="312"
+                        height="320"
+                        loading="lazy"
+                        decoding="async"
+                      />
                       <div class="team-cards">
                         <h2 class="team-card__title">
                           Миронов Александр Германович
@@ -487,10 +596,17 @@
                         <div class="arrow__blue-4"></div>
                       </div>
                     </div>
-                  </article>
-                  <article class="swiper-slide team__card">
+                  </div>
+                  <div class="swiper-slide team__card">
                     <div class="team__card-hover">
-                      <img src="images/about/3.jpg" alt="photo" />
+                      <img
+                        src="images/about/3.webp"
+                        alt="Шестакова Елизавета Егоровна"
+                        width="312"
+                        height="320"
+                        loading="lazy"
+                        decoding="async"
+                      />
                       <div class="team-cards">
                         <h2 class="team-card__title">
                           Шестакова Елизавета Егоровна
@@ -515,10 +631,17 @@
                         <div class="arrow__blue-4"></div>
                       </div>
                     </div>
-                  </article>
-                  <article class="swiper-slide team__card">
+                  </div>
+                  <div class="swiper-slide team__card">
                     <div class="team__card-hover">
-                      <img src="images/about/4.png" alt="photo" />
+                      <img
+                        src="images/about/4.webp"
+                        alt="Горюнова Полина Алексеевна"
+                        width="312"
+                        height="320"
+                        loading="lazy"
+                        decoding="async"
+                      />
                       <div class="team-cards">
                         <h2 class="team-card__title">
                           Горюнова Полина Алексеевна
@@ -545,7 +668,7 @@
                         <div class="arrow__blue-4"></div>
                       </div>
                     </div>
-                  </article>
+                  </div>
                 </div>
               </div>
             </div>
@@ -556,16 +679,18 @@
             <div class="reviews__content">
               <h2 class="info__title">Что о нас говорят клиенты</h2>
               <div class="reviews__button">
-                <button class="reviews__arrow reviews-button-prev">
-                  <img src="images/reviews/arrowleft.svg" alt="arrow" />
+                <button class="reviews__arrow reviews-button-prev" aria-label="Предыдущий отзыв">
+                  <img src="images/reviews/arrowleft.svg" alt="arrow" width="21" height="21" />
                 </button>
                 <img
                   class="reviews__slash"
                   src="images/reviews/Line 3.svg"
                   alt="slash"
+                  width="16"
+                  height="30"
                 />
-                <button class="reviews__arrow reviews-button-next">
-                  <img src="images/reviews/arrowright.svg" alt="arrow" />
+                <button class="reviews__arrow reviews-button-next" aria-label="Следующий отзыв">
+                  <img src="images/reviews/arrowright.svg" alt="arrow" width="20" height="21" />
                 </button>
               </div>
             </div>
@@ -574,7 +699,14 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide reviews__card">
                     <div class="reviews__top">
-                      <img src="images/reviews/Rectangle 28.png" alt="photo" />
+                      <img
+                        src="images/reviews/Rectangle 28.webp"
+                        alt="Логинова Анастасия"
+                        width="80"
+                        height="80"
+                        loading="lazy"
+                        decoding="async"
+                      />
                       <div class="reviews__title">
                         <p class="reviews__work">ООО “ИТ Консалтинг”</p>
                         <h3 class="reviews__name">Логинова Анастасия</h3>
@@ -592,8 +724,12 @@
                   <div class="swiper-slide reviews__card">
                     <div class="reviews__top">
                       <img
-                        src="images/reviews/Rectangle 28 (1).png"
-                        alt="photo"
+                        src="images/reviews/Rectangle 28 (1).webp"
+                        alt="Макаров Сергей"
+                        width="80"
+                        height="80"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div class="reviews__title">
                         <p class="reviews__work">АО “ПРОМАРШ”</p>
@@ -611,8 +747,12 @@
                   <div class="swiper-slide reviews__card">
                     <div class="reviews__top">
                       <img
-                        src="images/reviews/Rectangle 28 (1).png"
-                        alt="photo"
+                        src="images/reviews/Rectangle 28 (1).webp"
+                        alt="Макаров Сергей"
+                        width="80"
+                        height="80"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div class="reviews__title">
                         <p class="reviews__work">АО “ПРОМАРШ”</p>
@@ -630,8 +770,12 @@
                   <div class="swiper-slide reviews__card">
                     <div class="reviews__top">
                       <img
-                        src="images/reviews/Rectangle 28 (1).png"
-                        alt="photo"
+                        src="images/reviews/Rectangle 28 (1).webp"
+                        alt="Макаров Сергей"
+                        width="80"
+                        height="80"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div class="reviews__title">
                         <p class="reviews__work">АО “ПРОМАРШ”</p>
@@ -649,18 +793,14 @@
                 </div>
               </div>
             </div>
-            <button class="button__right button">
-              <a href="#">Все отзывы</a>
-            </button>
-            <button class="button__left button">
-              <a href="#">Написать отзыв</a>
-            </button>
+            <a href="#" class="button__right button">Все отзывы</a>
+            <a href="#" class="button__left button">Написать отзыв</a>
           </div>
         </section>
         <section class="news">
           <div class="news__container container">
             <div class="primary__title">
-              <h1 class="title">Полезные материалы</h1>
+              <h2 class="title">Полезные материалы</h2>
               <p class="primary__text">
                 Давно выяснено, что при оценке дизайна и композиции читаемый
                 текст мешает сосредоточиться. Lorem Ipsum используют потому, что
@@ -670,13 +810,17 @@
             <div class="news__slider">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <article class="swiper-slide new__item">
+                  <div class="swiper-slide new__item">
                     <div class="new__header team__card-hover">
                       <div class="new__images">
                         <img
                           class="new__image"
-                          src="images/news/Rectangle 30.png"
-                          alt="Rectangle 11"
+                          src="images/news/Rectangle 30.webp"
+                          alt="Воистину радостный звук: шёпот бессменных лидеров"
+                          width="424"
+                          height="270"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div class="new__arrow team-hover__efect">
                           <div class="eye__img"></div>
@@ -699,14 +843,18 @@
                         </p>
                       </div>
                     </div>
-                  </article>
-                  <article class="swiper-slide new__item">
+                  </div>
+                  <div class="swiper-slide new__item">
                     <div class="new__header team__card-hover">
                       <div class="new__images">
                         <img
                           class="new__image"
-                          src="images/news/Rectangle 30 (1).png"
-                          alt="Rectangle 11"
+                          src="images/news/Rectangle 30 (1).webp"
+                          alt="Франция намерена исследовать, почему объемы выросли"
+                          width="424"
+                          height="270"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div class="new__arrow team-hover__efect">
                           <div class="eye__img"></div>
@@ -730,14 +878,18 @@
                         </p>
                       </div>
                     </div>
-                  </article>
-                  <article class="swiper-slide new__item">
+                  </div>
+                  <div class="swiper-slide new__item">
                     <div class="new__header team__card-hover">
                       <div class="new__images">
                         <img
                           class="new__image"
-                          src="images/news/Rectangle 30 (2).png"
-                          alt="Rectangle 11"
+                          src="images/news/Rectangle 30 (2).webp"
+                          alt="Сплочённость команды профессионалов продолжает удивлять"
+                          width="424"
+                          height="270"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div class="new__arrow team-hover__efect">
                           <div class="eye__img"></div>
@@ -761,14 +913,12 @@
                         </p>
                       </div>
                     </div>
-                  </article>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <button class="services__button button">
-              <a href="#">Все услуги</a>
-            </button>
+            <a href="#" class="services__button button">Все услуги</a>
           </div>
         </section>
       </main>
@@ -790,7 +940,11 @@
                   <img
                     class="contact__icon"
                     src="images/footer/иконка (2).svg"
-                    alt="icon footer"
+                    alt="Наш адрес"
+                    width="55"
+                    height="55"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div class="contact__item">
                     <h3 class="contact__title">Наш адрес</h3>
@@ -803,7 +957,11 @@
                   <img
                     class="contact__icon"
                     src="images/footer/иконка (1).svg"
-                    alt="icon footer"
+                    alt="Телефон для консультаций"
+                    width="55"
+                    height="55"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div class="contact__item">
                     <h3 class="contact__title">Запись на консультанцию</h3>
@@ -816,7 +974,11 @@
                   <img
                     class="contact__icon"
                     src="images/footer/иконка.svg"
-                    alt="icon footer"
+                    alt="Электронная почта"
+                    width="55"
+                    height="55"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div class="contact__item">
                     <h3 class="contact__title">Корреспонденция</h3>
@@ -850,8 +1012,12 @@
                 <div class="footer__question">
                   <div class="question__top">
                     <img
-                      src="images/footer/Rectangle 28.svg"
-                      alt="photo footer"
+                      src="images/footer/Rectangle 28.webp"
+                      alt="Миронов Александр"
+                      width="65"
+                      height="65"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div class="question__items">
                       <h2 class="question__title">Миронов Александр</h2>
@@ -863,9 +1029,7 @@
                     разоблачены. Идейные соображения высшего порядка, а также
                     перспективное планирование играет
                   </p>
-                  <button class="question__button button">
-                    <a href="#">Задать вопрос юристу</a>
-                  </button>
+                  <a href="#" class="question__button button">Задать вопрос юристу</a>
                 </div>
               </div>
             </div>
@@ -880,12 +1044,8 @@
           </div>
         </div>
       </footer>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.1/swiper-bundle.min.js"
-        defer
-      ></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="js/main.js"></script>
+      <script defer src="swiper/swiper-bundle.min.js"></script>
+      <script defer src="js/main.js"></script>
     </div>
   </body>
 </html>
