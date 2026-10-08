@@ -431,7 +431,9 @@ img {
 }
 
 .services__button {
-  display: block;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -1221,13 +1223,17 @@ img {
   }
 
   .button__right {
-    display: block;
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
     margin-bottom: 24px;
   }
 
   .button__left {
-    display: block;
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
   }
 
