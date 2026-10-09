@@ -69,7 +69,7 @@
                   width="20"
                   height="20"
                 />
-                <a class="header__text" href="#">+7 (922) 022-94-82</a>
+                <a class="header__text" href="tel:+79220229482">+7 (922) 022-94-82</a>
               </div>
               <div class="header__content">
                 <img
@@ -79,16 +79,16 @@
                   width="20"
                   height="20"
                 />
-                <a class="header__text" href="#">janis62@yahoo.com</a>
+                <a class="header__text" href="mailto:janis62@yahoo.com">janis62@yahoo.com</a>
               </div>
             </div>
-            <a class="header__call" href="#">Заказать звонок</a>
+            <button class="header__call" id="openConsultationHeader" type="button">Заказать звонок</button>
           </div>
         </div>
         <div class="header__bottom">
           <div class="header__container container">
             <div class="header__logo">
-              <span class="logo">ЮрГарант</span>
+              <a href="#" class="logo">ЮрГарант</a>
             </div>
             <button class="burger" aria-label="Открыть меню" type="button">
               <span class="burger__item"></span>
@@ -96,24 +96,24 @@
             <nav class="header__menu">
               <ul class="menu__items">
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Услуги</a>
+                  <a class="menu__link" href="#services">Услуги</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link menu__link-active" href="#"
+                  <a class="menu__link menu__link-active" href="#info"
                     >О компании</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Наши юристы</a>
+                  <a class="menu__link" href="#about">Наши юристы</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Отзывы</a>
+                  <a class="menu__link" href="#reviews">Отзывы</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Новости</a>
+                  <a class="menu__link" href="#news">Новости</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Контакты</a>
+                  <a class="menu__link" href="#contact">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -135,7 +135,7 @@
                 интересов. Мы работаем, чтобы вы могли быть уверены в завтрашнем
                 дне!
               </p>
-              <a href="#" class="intro__button button">Наши услуги</a>
+              <a href="#services" class="intro__button button">Наши услуги</a>
             </div>
             <div class="intro__buttons">
               <div class="intro__line">
@@ -149,7 +149,7 @@
                 />
               </div>
               <div class="intro__btn">
-                <button class="intro__arrow" aria-label="Предыдущий слайд">
+                <button class="intro__arrow" id="heroPrevBtn" aria-label="Предыдущий слайд" type="button">
                   <img src="images/header-intro/arrowleft.svg" alt="arrow" width="21" height="20" />
                 </button>
                 <img
@@ -159,7 +159,7 @@
                   width="16"
                   height="31"
                 />
-                <button class="intro__arrow" aria-label="Следующий слайд">
+                <button class="intro__arrow" id="heroNextBtn" aria-label="Следующий слайд" type="button">
                   <img src="images/header-intro/arrowright.svg" alt="arrow" width="20" height="20" />
                 </button>
               </div>
@@ -167,9 +167,9 @@
           </div>
           <div class="intro__background"></div>
         </section>
-        <section class="services">
+        <section class="services" id="services">
           <div class="services__container container">
-            <div class="primary__title">
+            <div class="primary__title reveal">
               <h2 class="title">Наши услуги</h2>
               <p class="primary__text">
                 Давно выяснено, что при оценке дизайна и композиции читаемый
@@ -468,9 +468,9 @@
             <a href="#" class="services__button button">Все услуги</a>
           </div>
         </section>
-        <section class="info">
+        <section class="info" id="info">
           <div class="info__container container">
-            <div class="info__items">
+            <div class="info__items reveal">
               <h2 class="info__title">
                 Юридическая компания <span>правозащитник</span>
               </h2>
@@ -491,10 +491,10 @@
                 Некоторые версии появились по ошибке, некоторые - намеренно
                 (например, юмористические варианты).
               </p>
-              <a href="#" class="button__right button">История компании</a>
-              <a href="#" class="button__left button">Сертификаты</a>
+              <a href="#about" class="button__right button">История компании</a>
+              <a href="#about" class="button__left button">Сертификаты</a>
             </div>
-            <div class="info__image">
+            <div class="info__image reveal">
               <img
                 src="images/info/Rectangle 15.webp"
                 alt="Юридическая литература и документы"
@@ -506,9 +506,9 @@
             </div>
           </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
           <div class="container">
-            <div class="primary__title">
+            <div class="primary__title reveal">
               <h2 class="title">Наши юристы</h2>
               <p class="primary__text">
                 Давно выяснено, что при оценке дизайна и композиции читаемый
@@ -674,9 +674,9 @@
             </div>
           </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
           <div class="container">
-            <div class="reviews__content">
+            <div class="reviews__content reveal">
               <h2 class="info__title">Что о нас говорят клиенты</h2>
               <div class="reviews__button">
                 <button class="reviews__arrow reviews-button-prev" aria-label="Предыдущий отзыв">
@@ -797,9 +797,9 @@
             <a href="#" class="button__left button">Написать отзыв</a>
           </div>
         </section>
-        <section class="news">
+        <section class="news" id="news">
           <div class="news__container container">
-            <div class="primary__title">
+            <div class="primary__title reveal">
               <h2 class="title">Полезные материалы</h2>
               <p class="primary__text">
                 Давно выяснено, что при оценке дизайна и композиции читаемый
@@ -923,9 +923,9 @@
         </section>
       </main>
       <footer class="footer">
-        <section class="contact">
+        <section class="contact" id="contact">
           <div class="container">
-            <div class="contact__top">
+            <div class="contact__top reveal">
               <span class="logo">ЮрГарант</span>
               <p class="contact__text">
                 Предварительные выводы неутешительны: синтетическое
@@ -935,7 +935,7 @@
               </p>
             </div>
             <div class="contact__bottom">
-              <ul class="contact__list">
+              <ul class="contact__list reveal">
                 <li class="contact__items">
                   <img
                     class="contact__icon"
@@ -964,9 +964,9 @@
                     decoding="async"
                   />
                   <div class="contact__item">
-                    <h3 class="contact__title">Запись на консультанцию</h3>
+                    <h3 class="contact__title">Запись на консультацию</h3>
                     <address class="contact__address">
-                      +7 (922) 022-94-82
+                      <a href="tel:+79220229482" class="contact__link">+7 (922) 022-94-82</a>
                     </address>
                   </div>
                 </li>
@@ -983,30 +983,30 @@
                   <div class="contact__item">
                     <h3 class="contact__title">Корреспонденция</h3>
                     <address class="contact__address">
-                      janis62@yahoo.com
+                      <a href="mailto:janis62@yahoo.com" class="contact__link">janis62@yahoo.com</a>
                     </address>
                   </div>
                 </li>
               </ul>
-              <div class="footer__nav">
+              <div class="footer__nav reveal">
                 <ul class="footer__menu">
                   <li class="menu__list">
-                    <a class="menu__link" href="#">Услуги</a>
+                    <a class="menu__link" href="#services">Услуги</a>
                   </li>
                   <li class="menu__list">
-                    <a class="menu__link" href="#">О компании</a>
+                    <a class="menu__link" href="#info">О компании</a>
                   </li>
                   <li class="menu__list">
-                    <a class="menu__link" href="#">Сертификаты</a>
+                    <a class="menu__link" href="#about">Наши юристы</a>
                   </li>
                   <li class="menu__list">
-                    <a class="menu__link" href="#">Отзывы</a>
+                    <a class="menu__link" href="#reviews">Отзывы</a>
                   </li>
                   <li class="menu__list">
-                    <a class="menu__link" href="#">Полезные материалы</a>
+                    <a class="menu__link" href="#news">Полезные материалы</a>
                   </li>
                   <li class="menu__list">
-                    <a class="menu__link" href="#">Благотворительность</a>
+                    <a class="menu__link" href="#contact">Контакты</a>
                   </li>
                 </ul>
                 <div class="footer__question">
@@ -1029,7 +1029,7 @@
                     разоблачены. Идейные соображения высшего порядка, а также
                     перспективное планирование играет
                   </p>
-                  <a href="#" class="question__button button">Задать вопрос юристу</a>
+                  <button class="question__button button" id="openConsultationFooter" type="button">Задать вопрос юристу</button>
                 </div>
               </div>
             </div>
@@ -1037,13 +1037,49 @@
         </section>
         <div class="footer__bottom">
           <div class="footer-bottom__container container">
-            <a class="footer__link" href="#">Все права защищены, 2023</a>
+            <span class="footer__link">Все права защищены, 2026</span>
             <a class="footer__link" href="#"
               >Политика обработки персональных данных</a
             >
           </div>
         </div>
       </footer>
+
+      <!-- Floating Back to Top Button -->
+      <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m18 15-6-6-6 6"/>
+        </svg>
+      </button>
+
+      <!-- Consultation Dialog Modal -->
+      <dialog class="consultation-dialog" id="consultationDialog">
+        <div class="consultation-dialog__box">
+          <button class="consultation-dialog__close" id="closeConsultationBtn" aria-label="Закрыть окно" type="button">&times;</button>
+          <h3 class="consultation-dialog__title">Бесплатная консультация</h3>
+          <p class="consultation-dialog__subtitle">Оставьте ваш номер, и дежурный юрист свяжется с вами в течение 10 минут</p>
+          <form class="consultation-dialog__form" id="consultationForm">
+            <div class="form-group">
+              <label for="clientName">Ваше имя</label>
+              <input type="text" id="clientName" placeholder="Иван Петров" required />
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">Телефон</label>
+              <input type="tel" id="clientPhone" placeholder="+7 (999) 000-00-00" required />
+            </div>
+            <div class="form-group">
+              <label for="clientIssue">Суть вопроса (необязательно)</label>
+              <textarea id="clientIssue" rows="3" placeholder="Кратко опишите вашу ситуацию..."></textarea>
+            </div>
+            <button type="submit" class="button button--submit">Отправить заявку</button>
+            <p class="form-privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+          </form>
+        </div>
+      </dialog>
+
+      <!-- Toast Notification -->
+      <div class="toast-notice" id="toastNotice" role="status" aria-live="polite"></div>
+
       <script defer src="swiper/swiper-bundle.min.js"></script>
       <script defer src="js/main.js"></script>
     </div>
