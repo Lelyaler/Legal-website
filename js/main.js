@@ -76,13 +76,16 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateActiveNavLink, { passive: true });
 
   // =========================================================================
-  // 2. Hero Interactive Slides
+  // 2. Hero Interactive Slides with Background Transitions & Autoplay
   // =========================================================================
+  const heroSection = document.getElementById('hero');
   const heroSubtitle = document.querySelector('.intro__subtitle');
   const heroTitle = document.querySelector('.intro__title');
   const heroText = document.querySelector('.intro__text');
   const heroPrevBtn = document.getElementById('heroPrevBtn');
   const heroNextBtn = document.getElementById('heroNextBtn');
+  const heroBgSlides = document.querySelectorAll('.intro__bg-slide');
+  const heroBullets = document.querySelectorAll('.intro__bullet');
 
   const heroSlides = [
     {
@@ -103,11 +106,35 @@ document.addEventListener('DOMContentLoaded', function () {
   ];
 
   let currentHeroSlide = 0;
+  let heroAutoplayTimer = null;
+  const HERO_AUTOPLAY_DELAY = 3000;
 
   function renderHeroSlide(index) {
     if (!heroTitle || !heroSubtitle || !heroText) return;
     const content = heroTitle.closest('.intro__content');
-    if (content) content.style.opacity = '0.3';
+    if (content) content.style.opacity = '0.35';
+
+    // Transition background slides
+    if (heroBgSlides && heroBgSlides.length) {
+      heroBgSlides.forEach(function (slide, i) {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    // Transition pagination bullets
+    if (heroBullets && heroBullets.length) {
+      heroBullets.forEach(function (bullet, i) {
+        if (i === index) {
+          bullet.classList.add('active');
+        } else {
+          bullet.classList.remove('active');
+        }
+      });
+    }
 
     setTimeout(function () {
       const slide = heroSlides[index];
@@ -118,17 +145,65 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 180);
   }
 
+  function startHeroAutoplay() {
+    stopHeroAutoplay();
+    heroAutoplayTimer = setInterval(function () {
+      currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+      renderHeroSlide(currentHeroSlide);
+    }, HERO_AUTOPLAY_DELAY);
+  }
+
+  function stopHeroAutoplay() {
+    if (heroAutoplayTimer) {
+      clearInterval(heroAutoplayTimer);
+      heroAutoplayTimer = null;
+    }
+  }
+
+  function goToHeroSlide(index) {
+    currentHeroSlide = index;
+    renderHeroSlide(currentHeroSlide);
+    startHeroAutoplay();
+  }
+
   if (heroPrevBtn && heroNextBtn) {
     heroPrevBtn.addEventListener('click', function () {
-      currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
-      renderHeroSlide(currentHeroSlide);
+      const prevIndex = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+      goToHeroSlide(prevIndex);
     });
 
     heroNextBtn.addEventListener('click', function () {
-      currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
-      renderHeroSlide(currentHeroSlide);
+      const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+      goToHeroSlide(nextIndex);
     });
   }
+
+  // Allow clicking on bullets directly
+  if (heroBullets && heroBullets.length) {
+    heroBullets.forEach(function (bullet, index) {
+      bullet.addEventListener('click', function () {
+        goToHeroSlide(index);
+      });
+    });
+  }
+
+  // Start autoplay initially
+  startHeroAutoplay();
+
+  // Pause on hover, resume on mouse leave
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', stopHeroAutoplay);
+    heroSection.addEventListener('mouseleave', startHeroAutoplay);
+  }
+
+  // Pause when page is not visible
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      stopHeroAutoplay();
+    } else {
+      startHeroAutoplay();
+    }
+  });
 
   // =========================================================================
   // 3. Scroll Reveal & Animated Number Counters
