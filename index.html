@@ -201,9 +201,9 @@
 
             <div class="intro__buttons">
               <div class="intro__pagination" id="heroPagination" role="tablist" aria-label="Слайды">
-                <button class="intro__bullet active" type="button" data-index="0" aria-label="Слайд 1 - Правовой Компас"></button>
-                <button class="intro__bullet" type="button" data-index="1" aria-label="Слайд 2 - Арбитраж и Бизнес"></button>
-                <button class="intro__bullet" type="button" data-index="2" aria-label="Слайд 3 - Свобода от Долгов"></button>
+                <button class="intro__bullet active" type="button" role="tab" aria-selected="true" data-index="0" aria-label="Слайд 1 - Правовой Компас"></button>
+                <button class="intro__bullet" type="button" role="tab" aria-selected="false" data-index="1" aria-label="Слайд 2 - Арбитраж и Бизнес"></button>
+                <button class="intro__bullet" type="button" role="tab" aria-selected="false" data-index="2" aria-label="Слайд 3 - Свобода от Долгов"></button>
               </div>
               <div class="intro__btn">
                 <button class="intro__arrow" id="heroPrevBtn" aria-label="Предыдущий слайд" type="button">
@@ -272,10 +272,10 @@
             </div>
 
             <!-- Service Category Filter Tabs -->
-            <div class="services__tabs reveal" role="tablist">
-              <button class="service-tab active" data-filter="all" type="button" role="tab">Все услуги</button>
-              <button class="service-tab" data-filter="citizens" type="button" role="tab">Для граждан</button>
-              <button class="service-tab" data-filter="business" type="button" role="tab">Для бизнеса</button>
+            <div class="services__tabs reveal" role="tablist" aria-label="Категории услуг">
+              <button class="service-tab active" data-filter="all" type="button" role="tab" aria-selected="true">Все услуги</button>
+              <button class="service-tab" data-filter="citizens" type="button" role="tab" aria-selected="false">Для граждан</button>
+              <button class="service-tab" data-filter="business" type="button" role="tab" aria-selected="false">Для бизнеса</button>
             </div>
 
             <div class="services__content-grid">
@@ -634,7 +634,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="info-feature__title">Прозрачный договор</h4>
+                    <h3 class="info-feature__title">Прозрачный договор</h3>
                     <p class="info-feature__text">Фиксированная смета без непредвиденных доплат и скрытых комиссий.</p>
                   </div>
                 </div>
@@ -647,7 +647,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="info-feature__title">Адвокатская тайна</h4>
+                    <h3 class="info-feature__title">Адвокатская тайна</h3>
                     <p class="info-feature__text">Абсолютная конфиденциальность сведений и защита коммерческой информации.</p>
                   </div>
                 </div>
@@ -660,7 +660,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="info-feature__title">Персональный юрист</h4>
+                    <h3 class="info-feature__title">Персональный юрист</h3>
                     <p class="info-feature__text">Постоянная связь, регулярные отчеты и контроль дела на каждом этапе.</p>
                   </div>
                 </div>
@@ -675,7 +675,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="info-feature__title">Ориентация на результат</h4>
+                    <h3 class="info-feature__title">Ориентация на результат</h3>
                     <p class="info-feature__text">Более 98% выигранных дел в судах различных юрисдикций РФ.</p>
                   </div>
                 </div>
@@ -1235,6 +1235,7 @@
       <footer class="footer">
         <section class="contact" id="contact">
           <div class="container">
+            <h2 class="visually-hidden">Контакты и запись на консультацию</h2>
             <div class="contact__top reveal">
               <div class="contact__brand-block">
                 <span class="logo">ЮрГарант</span>
@@ -1568,10 +1569,10 @@
             </div>
           </div>
 
-          <div class="all-reviews__filter-tabs">
-            <button class="all-reviews__tab active" type="button" data-filter="all">Все отзывы (25)</button>
-            <button class="all-reviews__tab" type="button" data-filter="business">Для бизнеса (13)</button>
-            <button class="all-reviews__tab" type="button" data-filter="personal">Для граждан (12)</button>
+          <div class="all-reviews__filter-tabs" role="tablist" aria-label="Фильтр отзывов">
+            <button class="all-reviews__tab active" type="button" role="tab" aria-selected="true" data-filter="all">Все отзывы (25)</button>
+            <button class="all-reviews__tab" type="button" role="tab" aria-selected="false" data-filter="business">Для бизнеса (13)</button>
+            <button class="all-reviews__tab" type="button" role="tab" aria-selected="false" data-filter="personal">Для граждан (12)</button>
           </div>
 
           <div class="all-reviews__list" id="allReviewsContainer">

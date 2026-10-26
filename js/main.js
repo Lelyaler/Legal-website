@@ -130,8 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
       heroBullets.forEach(function (bullet, i) {
         if (i === index) {
           bullet.classList.add('active');
+          bullet.setAttribute('aria-selected', 'true');
         } else {
           bullet.classList.remove('active');
+          bullet.setAttribute('aria-selected', 'false');
         }
       });
     }
@@ -302,8 +304,10 @@ document.addEventListener('DOMContentLoaded', function () {
     tab.addEventListener('click', function () {
       serviceTabs.forEach(function (t) {
         t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
       });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
 
       const filter = tab.getAttribute('data-filter');
 
@@ -544,8 +548,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (allReviewsTabs && allReviewsTabs.length) {
     allReviewsTabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
-        allReviewsTabs.forEach(function (t) { t.classList.remove('active'); });
+        allReviewsTabs.forEach(function (t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         const filter = tab.getAttribute('data-filter') || 'all';
 
         allReviewsItems.forEach(function (item) {
