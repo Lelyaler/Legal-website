@@ -4,19 +4,19 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Authentic Corporate Legal */
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-primary-light: #4f8ff0;
-  --color-primary-soft: #eff6ff;
-  --color-primary-border: #bfdbfe;
+  /* Color Palette - Noble Corporate Legal (Restrained, Human Oxford Navy & Sapphire) */
+  --color-primary: #1e3a8a;
+  --color-primary-hover: #172554;
+  --color-primary-light: #2563eb;
+  --color-primary-soft: #f1f5f9;
+  --color-primary-border: #cbd5e1;
 
-  --color-navy: #0f172a;
+  --color-navy: #0b1120;
   --color-navy-dark: #020617;
   --color-header-top: #0a0f1d;
-  --color-header-bottom: rgba(15, 23, 42, 0.88);
+  --color-header-bottom: rgba(10, 15, 29, 0.94);
 
-  --color-text-main: #0f172a;
+  --color-text-main: #0b1120;
   --color-text-body: #334155;
   --color-text-muted: #64748b;
   --color-text-light: #94a3b8;
@@ -138,25 +138,24 @@ button {
   letter-spacing: 0.4px;
   padding: 13px 26px;
   border-radius: var(--radius-sm);
-  border: 2px solid var(--color-primary);
+  border: none;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast),
-    color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
   text-decoration: none;
 }
 
 .button:hover {
   background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-primary);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.35);
 }
 
 .button:active {
@@ -164,14 +163,14 @@ button {
 }
 
 .button:focus-visible {
-  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline: 3px solid rgba(30, 58, 138, 0.4);
   outline-offset: 2px;
 }
 
 .button--secondary {
   background-color: transparent;
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .button--secondary:hover {
@@ -181,13 +180,17 @@ button {
 }
 
 .button__left {
-  background-color: var(--color-bg-subtle);
+  background-color: #f1f5f9;
   color: var(--color-text-main);
-  border: 2px solid var(--color-border);
+  border: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
 .button__left:hover {
-  background-color: #ffffff;
+  background-color: #e2e8f0;
+  color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
   border-color: var(--color-primary);
   color: var(--color-primary);
 }
@@ -266,9 +269,9 @@ button {
 .header__top {
   position: relative;
   z-index: 3;
-  padding: 8px 0;
+  padding: 10px 0;
   background-color: var(--color-header-top);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border: none;
 }
 
 .header__container {
@@ -302,7 +305,7 @@ button {
 }
 
 .header__text:hover {
-  color: var(--color-primary-light);
+  color: #93c5fd;
 }
 
 .header__schedule {
@@ -325,24 +328,23 @@ button {
 }
 
 .header__call {
-  background-color: transparent;
-  border: 1px solid var(--color-primary-light);
-  color: var(--color-primary-light);
+  background-color: var(--color-primary);
+  border: none;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 700;
-  padding: 6px 18px;
-  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .header__call:hover {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-primary-hover);
   color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.4);
 }
 
 .header__bottom {
@@ -352,14 +354,14 @@ button {
   background-color: var(--color-header-bottom);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border: none;
   transition: background-color var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
 }
 
 .header.header--scrolled .header__bottom {
-  background-color: rgba(15, 23, 42, 0.96);
+  background-color: rgba(10, 15, 29, 0.98);
   padding: 10px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .header__logo {
@@ -383,7 +385,7 @@ button {
 .logo__desc {
   font-size: 11px;
   text-transform: uppercase;
-  color: var(--color-primary-light);
+  color: #94a3b8;
   font-weight: 600;
   letter-spacing: 1.2px;
   margin-top: 2px;
@@ -397,37 +399,27 @@ button {
 .menu__items {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 8px;
 }
 
 .menu__link {
   position: relative;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 14px;
   font-weight: 600;
-  padding: 6px 0;
-  transition: color var(--transition-fast);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.menu__link:hover,
+.menu__link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
 .menu__link.menu__link-active {
-  color: var(--color-primary-light);
-}
-
-.menu__link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-primary-light);
-  transition: width var(--transition-base);
-}
-
-.menu__link:hover::after,
-.menu__link.menu__link-active::after {
-  width: 100%;
+  color: #ffffff;
+  background-color: rgba(30, 58, 138, 0.5);
 }
 
 .burger {
@@ -486,26 +478,26 @@ button {
 
 .intro {
   position: relative;
-  background-image: url('../images/header-intro/bg-imggg.webp');
+  background-image: url('../images/header-intro/hero-legal-bg.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 130px;
-  padding-bottom: 24px;
+  padding-top: 175px;
+  padding-bottom: 28px;
 }
 
 @media (max-width: 768px) {
   .intro {
-    background-image: url('../images/header-intro/bg-imggg-mobile.webp');
-    padding-top: 110px;
-    padding-bottom: 20px;
+    background-image: url('../images/header-intro/hero-legal-bg-mobile.webp');
+    padding-top: 135px;
+    padding-bottom: 24px;
   }
 }
 
 .intro__background {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 15, 29, 0.78) 0%, rgba(15, 23, 42, 0.86) 100%);
+  background: linear-gradient(180deg, rgba(10, 15, 29, 0.8) 0%, rgba(11, 17, 32, 0.88) 100%);
   z-index: 1;
 }
 
@@ -528,10 +520,11 @@ button {
   display: inline-block;
   color: #93c5fd;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 14px;
+  letter-spacing: 1.8px;
+  margin-top: 24px;
+  margin-bottom: 18px;
   background: none;
   border: none;
   padding: 0;
@@ -582,7 +575,7 @@ button {
   gap: 36px;
   margin-top: 36px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: none;
   flex-wrap: wrap;
 }
 
@@ -620,8 +613,8 @@ button {
 }
 
 .intro__arrow {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -629,7 +622,7 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .intro__arrow:hover {
@@ -710,25 +703,24 @@ button {
   padding: 10px 22px;
   background-color: #ffffff;
   color: var(--color-text-body);
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-pill);
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: var(--shadow-xs);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
   transition: all var(--transition-fast);
 }
 
 .service-tab:hover {
-  border-color: var(--color-primary);
   color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
 }
 
 .service-tab.active {
   background-color: var(--color-primary);
-  border-color: var(--color-primary);
   color: #ffffff;
-  box-shadow: var(--shadow-primary);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.35);
 }
 
 .services__content-grid {
@@ -804,7 +796,7 @@ button {
 .services__checklist {
   margin-top: auto;
   margin-bottom: 24px;
-  border-top: 1px dashed var(--color-border);
+  border: none;
   padding-top: 16px;
   display: flex;
   flex-direction: column;
@@ -832,7 +824,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding-top: 14px;
-  border-top: 1px solid var(--color-border);
+  border: none;
 }
 
 .services__price {
@@ -997,7 +989,7 @@ button {
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
-  border: 1px solid var(--color-border);
+  border: none;
 }
 
 .info__image-card img {
@@ -1012,7 +1004,7 @@ button {
   bottom: 24px;
   left: 24px;
   right: 24px;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(10, 15, 29, 0.92);
   backdrop-filter: blur(8px);
   padding: 18px 22px;
   border-radius: var(--radius-md);
@@ -1020,7 +1012,7 @@ button {
   align-items: center;
   gap: 16px;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: none;
 }
 
 .info__badge-num {
@@ -1251,7 +1243,7 @@ button {
 
 .reviews__arrow {
   background: #ffffff;
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -1259,7 +1251,7 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow-xs);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-fast);
 }
 
@@ -1351,8 +1343,8 @@ button {
   font-weight: 700;
   color: var(--color-primary);
   margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px dashed var(--color-border);
+  padding-top: 14px;
+  border: none;
 }
 
 .reviews__actions {
@@ -1626,18 +1618,19 @@ button {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(59, 130, 246, 0.14);
+  background: rgba(255, 255, 255, 0.08);
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #3b82f6;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  color: #93c5fd;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
 }
 
 .contact__items:hover .contact__icon-wrap {
-  background: rgba(59, 130, 246, 0.25);
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
   transform: scale(1.06);
 }
 
@@ -1710,7 +1703,7 @@ button {
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-primary);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .question__title {
@@ -1778,7 +1771,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.35);
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px);
@@ -1982,9 +1975,9 @@ button {
   display: flex;
   gap: 20px;
   background-color: var(--color-bg-alt);
-  padding: 14px 18px;
+  padding: 16px 20px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  border: none;
   margin-bottom: 22px;
 }
 
@@ -2057,50 +2050,90 @@ button {
 }
 
 /* Lawyer Profile Modal */
-.lawyer-profile-layout {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 24px;
-  align-items: flex-start;
+/* Lawyer Profile Modal - Top Photo Centered Layout */
+.lawyer-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.lawyer-profile-photo {
-  width: 100%;
-  border-radius: var(--radius-md);
+.lawyer-profile-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.lawyer-profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   object-fit: cover;
-  box-shadow: var(--shadow-sm);
+  object-position: top center;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  margin-bottom: 14px;
+  border: 3px solid #ffffff;
 }
 
-.lawyer-profile-header h3 {
-  font-size: 20px;
+.lawyer-profile-name {
+  font-size: 22px;
   font-weight: 800;
   color: var(--color-navy);
   margin-bottom: 4px;
+  line-height: 1.25;
 }
 
-.lawyer-profile-header p {
+.lawyer-profile-role {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-primary);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  max-width: 440px;
 }
 
-.lawyer-profile-section {
-  margin-bottom: 16px;
+.lawyer-profile-exp {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--color-navy);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
 }
 
-.lawyer-profile-section h4 {
-  font-size: 13px;
+.lawyer-profile-body {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.lawyer-info-block {
+  background-color: var(--color-bg-alt);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+}
+
+.lawyer-info-label {
+  font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.8px;
   color: var(--color-text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
-.lawyer-profile-section p {
+.lawyer-info-text {
   font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-text-body);
+  line-height: 1.55;
+  color: var(--color-navy);
+}
+
+.lawyer-profile-footer {
+  width: 100%;
 }
 
 /* Certificates Grid */
@@ -2113,7 +2146,8 @@ button {
 
 .cert-item {
   background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
+  border: none;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
   border-radius: var(--radius-md);
   padding: 20px 16px;
   text-align: center;
@@ -2146,7 +2180,7 @@ button {
   line-height: 1.6;
   margin-bottom: 16px;
   padding-bottom: 14px;
-  border-bottom: 1px solid var(--color-border);
+  border: none;
 }
 
 .article-full-text {
@@ -2175,7 +2209,7 @@ button {
   transition: opacity var(--transition-base), transform var(--transition-base);
   max-width: 90%;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
 }
 
 .toast-notice.show {
@@ -2268,10 +2302,6 @@ button {
   }
 
   .certificates-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lawyer-profile-layout {
     grid-template-columns: 1fr;
   }
 }

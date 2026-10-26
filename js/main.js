@@ -506,28 +506,27 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!profile || !lawyerDialog || !lawyerProfileContent) return;
 
     lawyerProfileContent.innerHTML = `
-      <div class="lawyer-profile-layout">
-        <img class="lawyer-profile-photo" src="${profile.photo}" alt="${profile.name}" />
-        <div class="lawyer-profile-details">
-          <div class="lawyer-profile-header">
-            <h3>${profile.name}</h3>
-            <p>${profile.role}</p>
+      <div class="lawyer-profile-card">
+        <div class="lawyer-profile-top">
+          <img class="lawyer-profile-avatar" src="${profile.photo}" alt="${profile.name}" />
+          <h3 class="lawyer-profile-name">${profile.name}</h3>
+          <p class="lawyer-profile-role">${profile.role}</p>
+          <span class="lawyer-profile-exp">${profile.exp}</span>
+        </div>
+        <div class="lawyer-profile-body">
+          <div class="lawyer-info-block">
+            <div class="lawyer-info-label">Образование</div>
+            <p class="lawyer-info-text">${profile.edu}</p>
           </div>
-          <div class="lawyer-profile-section">
-            <h4>Стаж работы:</h4>
-            <p>${profile.exp}</p>
+          <div class="lawyer-info-block">
+            <div class="lawyer-info-label">Ключевые достижения</div>
+            <p class="lawyer-info-text">${profile.cases}</p>
           </div>
-          <div class="lawyer-profile-section">
-            <h4>Образование:</h4>
-            <p>${profile.edu}</p>
-          </div>
-          <div class="lawyer-profile-section">
-            <h4>Ключевые достижения:</h4>
-            <p>${profile.cases}</p>
-          </div>
-          <div class="service-modal-actions" style="margin-top: 20px;">
-            <button class="button" id="bookLawyerBtn" type="button">Записаться к этому юристу</button>
-          </div>
+        </div>
+        <div class="lawyer-profile-footer">
+          <button class="button button--submit" id="bookLawyerBtn" type="button">
+            Записаться к этому юристу
+          </button>
         </div>
       </div>
     `;
