@@ -413,6 +413,16 @@ document.addEventListener('DOMContentLoaded', function () {
   if (openHeaderBtn) openHeaderBtn.addEventListener('click', function () { openConsultationModal(); });
   if (openFooterBtn) openFooterBtn.addEventListener('click', function () { openConsultationModal(); });
   if (heroConsultationBtn) heroConsultationBtn.addEventListener('click', function () { openConsultationModal(); });
+  const burgerConsultationBtn = document.getElementById('burgerConsultationBtn');
+  if (burgerConsultationBtn) {
+    burgerConsultationBtn.addEventListener('click', function () {
+      if (burger) burger.classList.remove('active');
+      if (menu) menu.classList.remove('active');
+      document.body.classList.remove('lock');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+      openConsultationModal('Срочная консультация');
+    });
+  }
   if (servicesCustomBtn) servicesCustomBtn.addEventListener('click', function () { openConsultationModal('Общая консультация'); });
   if (closeConsultationBtn) closeConsultationBtn.addEventListener('click', function () { consultationDialog.close(); });
   setupDialogBackdropClose(consultationDialog);

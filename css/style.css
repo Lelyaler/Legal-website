@@ -191,9 +191,6 @@ button {
   color: var(--color-primary);
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
 }
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
 
 .button__right {
   margin-right: 18px;
@@ -425,6 +422,10 @@ button {
 .menu__link.menu__link-active {
   color: #ffffff;
   background-color: rgba(30, 58, 138, 0.5);
+}
+
+.menu__extra {
+  display: none;
 }
 
 .burger {
@@ -2456,8 +2457,6 @@ button {
 .all-reviews__footer .button {
   min-width: 280px;
 }
-  margin-bottom: 24px;
-}
 
 /* Toast Notice */
 .toast-notice {
@@ -2524,6 +2523,9 @@ button {
     justify-content: flex-start;
     padding: 80px 24px 30px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .header__menu.active {
@@ -2533,12 +2535,91 @@ button {
   .menu__items {
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
     width: 100%;
+    margin-bottom: 24px;
   }
 
   .menu__link {
     font-size: 16px;
+  }
+
+  .menu__extra {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 18px;
+  }
+
+  .menu__extra-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .menu__extra-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .menu__extra-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--color-text-light);
+  }
+
+  .menu__extra-phone {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    transition: color var(--transition-fast);
+  }
+
+  .menu__extra-phone:hover {
+    color: #93c5fd;
+  }
+
+  .menu__extra-schedule {
+    font-size: 11px;
+    color: #94a3b8;
+  }
+
+  .menu__extra-address {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+  }
+
+  .menu__extra-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .menu__extra-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 4px;
+    text-align: center;
+  }
+
+  .menu__extra-copy {
+    font-size: 11px;
+    color: var(--color-text-light);
+  }
+
+  .menu__extra-note {
+    font-size: 10px;
+    color: #64748b;
   }
 
   .burger {
