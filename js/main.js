@@ -661,7 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     new Swiper('.about__slider .swiper-container', {
       spaceBetween: 24,
-      autoHeight: true,
+      autoHeight: false,
       breakpoints: {
         310: {
           slidesPerView: 1.15,
@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     new Swiper('.reviews__slider .swiper-container', {
       spaceBetween: 24,
-      autoHeight: true,
+      autoHeight: false,
       breakpoints: {
         320: {
           slidesPerView: 1,
