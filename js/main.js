@@ -504,9 +504,49 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   setupDialogBackdropClose(reviewDialog);
 
-  if (allReviewsTrigger) {
+  // --- All Reviews Modal Dialog ---
+  const allReviewsDialog = document.getElementById('allReviewsDialog');
+  const closeAllReviewsBtn = document.getElementById('closeAllReviewsBtn');
+  const writeReviewFromAllBtn = document.getElementById('writeReviewFromAllBtn');
+  const allReviewsTabs = document.querySelectorAll('.all-reviews__tab');
+  const allReviewsItems = document.querySelectorAll('.all-reviews__item');
+
+  if (allReviewsTrigger && allReviewsDialog) {
     allReviewsTrigger.addEventListener('click', function () {
-      showToast('На данный момент все 48 отзывов проверены службой контроля качества «ЮрГарант».');
+      allReviewsDialog.showModal();
+    });
+  }
+
+  if (closeAllReviewsBtn && allReviewsDialog) {
+    closeAllReviewsBtn.addEventListener('click', function () {
+      allReviewsDialog.close();
+    });
+  }
+  setupDialogBackdropClose(allReviewsDialog);
+
+  if (writeReviewFromAllBtn && allReviewsDialog && reviewDialog) {
+    writeReviewFromAllBtn.addEventListener('click', function () {
+      allReviewsDialog.close();
+      reviewDialog.showModal();
+    });
+  }
+
+  if (allReviewsTabs && allReviewsTabs.length) {
+    allReviewsTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        allReviewsTabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        const filter = tab.getAttribute('data-filter') || 'all';
+
+        allReviewsItems.forEach(function (item) {
+          const itemCat = item.getAttribute('data-category');
+          if (filter === 'all' || itemCat === filter) {
+            item.removeAttribute('hidden');
+          } else {
+            item.setAttribute('hidden', '');
+          }
+        });
+      });
     });
   }
 
@@ -655,20 +695,57 @@ document.addEventListener('DOMContentLoaded', function () {
   const articleModalTitle = document.getElementById('articleModalTitle');
   const articleModalDate = document.getElementById('articleModalDate');
   const articleModalLead = document.getElementById('articleModalLead');
+  const articleModalContent = document.getElementById('articleModalContent');
   const articleConsultBtn = document.getElementById('articleConsultBtn');
+
+  const articleDetailsData = {
+    'article-1': `
+      <p>Корпоративные конфликты между учредителями и руководством требуют выверенных правовых шагов. Ошибки в оформлении протоколов собраний или поспешные изменения в ЕГРЮЛ влекут риски блокировок счетов и финансовой ответственности.</p>
+      <ul style="margin: 16px 0; padding-left: 20px; line-height: 1.8;">
+        <li><strong>Правовой аудит Устава и соглашений:</strong> определение полномочий участников и порядка принятия ключевых решений.</li>
+        <li><strong>Предотвращение вывода активов:</strong> оперативное наложение обеспечительных мер через арбитражный суд.</li>
+        <li><strong>Оспаривание неправомерных сделок:</strong> признание недействительными договоров с заинтересованностью, причинивших вред обществу.</li>
+      </ul>
+      <p>Адвокаты компании сопровождают споры участников на любой стадии, стремясь к подписанию взаимовыгодного мирового соглашения.</p>
+    `,
+    'article-2': `
+      <p>Налоговые проверки часто сопровождаются требованиями об истребовании огромного массива финансовой документации. Закон предоставляет налогоплательщику действенные механизмы защиты прав и законных интересов.</p>
+      <ul style="margin: 16px 0; padding-left: 20px; line-height: 1.8;">
+        <li><strong>Анализ правомерности запросов ФНС:</strong> истребование документации вне рамок налоговой проверки без указания конкретной сделки неправомерно.</li>
+        <li><strong>Правовая поддержка на допросах:</strong> присутствие налогового юриста исключает психологическое давление и искажение протокола.</li>
+        <li><strong>Подача мотивированных возражений:</strong> отмена необоснованных доначислений на стадии рассмотрения материалов проверки в УФНС.</li>
+      </ul>
+      <p>Своевременный правовой анализ требований инспекции позволяет урегулировать претензии ещё на досудебном этапе.</p>
+    `,
+    'article-3': `
+      <p>Покупка квартиры, земельного участка или коммерческого помещения сопряжена с рисками, которые невозможно выявить одной лишь стандартной выпиской из ЕГРН. Судебная практика показывает, что защита добросовестного приобретателя требует глубокого предварительного аудита.</p>
+      <ul style="margin: 16px 0; padding-left: 20px; line-height: 1.8;">
+        <li><strong>Риск банкротства продавца по 127-ФЗ:</strong> продажа объекта по заниженной стоимости в преддверии банкротства может быть оспорена финансовым управляющим в течение 3 лет.</li>
+        <li><strong>Лица с бессрочным правом пользования:</strong> граждане, отказавшиеся от приватизации в пользу родственников, сохраняют право пожизненного проживания в жилье.</li>
+        <li><strong>Использование материнского капитала:</strong> невыделение долей несовершеннолетним детям в цепочке сделок делает договор оспоримым в силу закона.</li>
+        <li><strong>Отсутствие нотариального согласия супруга:</strong> если объект приобретался в браке, отчуждение без согласия второго супруга оставляет право оспорить сделку.</li>
+        <li><strong>Скрытые судебные притязания и аресты:</strong> проверка наличия открытых исполнительных производств и имущественных споров в судах общей юрисдикции.</li>
+      </ul>
+      <p>Комплексная юридическая проверка недвижимости в «ЮрГарант» обеспечивает 100% безопасность расчетов и защиту права собственности.</p>
+    `
+  };
 
   let activeArticleTopic = '';
 
   document.querySelectorAll('.new__item').forEach(function (item) {
     item.addEventListener('click', function () {
       if (!articleDialog) return;
-      activeArticleTopic = item.getAttribute('data-title') || 'Юридическая статья';
+      const articleId = item.getAttribute('data-article-id') || '';
+      activeArticleTopic = item.getAttribute('data-title') || 'Юридическая консультация';
       const date = item.getAttribute('data-date') || '';
       const summary = item.getAttribute('data-summary') || '';
 
       if (articleModalTitle) articleModalTitle.textContent = activeArticleTopic;
       if (articleModalDate) articleModalDate.textContent = date;
       if (articleModalLead) articleModalLead.textContent = summary;
+      if (articleModalContent && articleDetailsData[articleId]) {
+        articleModalContent.innerHTML = articleDetailsData[articleId];
+      }
 
       articleDialog.showModal();
     });

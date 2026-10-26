@@ -935,7 +935,7 @@
                   <div class="swiper-slide reviews__card">
                     <div class="reviews__top">
                       <img
-                        src="images/reviews/Rectangle 28.webp"
+                        src="images/reviews/client-voronova.webp"
                         alt="Воронова Елена"
                         width="70"
                         height="70"
@@ -961,7 +961,7 @@
                   <div class="swiper-slide reviews__card">
                     <div class="reviews__top">
                       <img
-                        src="images/reviews/Rectangle 28 (1).webp"
+                        src="images/reviews/client-belov.webp"
                         alt="Белов Роман"
                         width="70"
                         height="70"
@@ -1495,7 +1495,7 @@
       </dialog>
 
       <!-- 6. Article Preview Modal Dialog -->
-      <dialog class="custom-dialog" id="articleDialog">
+      <dialog class="custom-dialog custom-dialog--wide" id="articleDialog">
         <div class="custom-dialog__box custom-dialog__box--wide">
           <button class="custom-dialog__close" id="closeArticleBtn" aria-label="Закрыть окно" type="button">&times;</button>
           <div class="custom-dialog__header">
@@ -1504,15 +1504,163 @@
             <p class="custom-dialog__subtitle" id="articleModalDate">Дата публикации</p>
           </div>
           <div class="article-modal-body">
-            <p class="article-lead" id="articleModalLead"></p>
+            <div class="article-lead-card">
+              <div class="article-lead-badge">Ключевая суть правового разбора</div>
+              <p class="article-lead" id="articleModalLead"></p>
+            </div>
             <div class="article-full-text" id="articleModalContent">
               <p>Наши адвокаты ежедневно анализируют изменения нормативно-правовых актов и судебной практики ВС РФ. Если вы столкнулись с аналогичной правовой проблемой, рекомендуем проконсультироваться со специалистом до совершения юридически значимых действий.</p>
             </div>
-            <div class="service-modal-actions">
-              <button class="button" id="articleConsultBtn" type="button">
+            <div class="article-modal-actions">
+              <button class="button button--submit" id="articleConsultBtn" type="button">
                 Проконсультироваться по этой теме
               </button>
             </div>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- 7. All Reviews Modal Dialog -->
+      <dialog class="custom-dialog custom-dialog--wide" id="allReviewsDialog">
+        <div class="custom-dialog__box custom-dialog__box--wide">
+          <button class="custom-dialog__close" id="closeAllReviewsBtn" aria-label="Закрыть окно" type="button">&times;</button>
+          <div class="custom-dialog__header">
+            <span class="custom-dialog__badge">Репутация и доверие</span>
+            <h3 class="custom-dialog__title">Отзывы доверителей</h3>
+            <p class="custom-dialog__subtitle">
+              Средняя оценка <strong style="color: var(--color-primary);">4.9 из 5.0</strong> на основании 48 проверенных дел.
+            </p>
+          </div>
+
+          <div class="all-reviews__stats-bar">
+            <div class="all-reviews__stat-item">
+              <span class="all-reviews__stat-num">98%</span>
+              <span class="all-reviews__stat-label">Выигранных дел</span>
+            </div>
+            <div class="all-reviews__stat-item">
+              <span class="all-reviews__stat-num">14 лет</span>
+              <span class="all-reviews__stat-label">Практики в судах</span>
+            </div>
+            <div class="all-reviews__stat-item">
+              <span class="all-reviews__stat-num">100%</span>
+              <span class="all-reviews__stat-label">Адвокатская тайна</span>
+            </div>
+          </div>
+
+          <div class="all-reviews__filter-tabs">
+            <button class="all-reviews__tab active" type="button" data-filter="all">Все отзывы (48)</button>
+            <button class="all-reviews__tab" type="button" data-filter="business">Для бизнеса</button>
+            <button class="all-reviews__tab" type="button" data-filter="personal">Для граждан</button>
+          </div>
+
+          <div class="all-reviews__list" id="allReviewsContainer">
+            <!-- Review 1 -->
+            <div class="all-reviews__item" data-category="business">
+              <div class="all-reviews__item-top">
+                <img class="all-reviews__avatar" src="images/reviews/Rectangle 28.webp" alt="Логинова Анастасия" />
+                <div class="all-reviews__author">
+                  <div class="all-reviews__stars">★★★★★</div>
+                  <h4 class="all-reviews__name">Логинова Анастасия</h4>
+                  <p class="all-reviews__role">Генеральный директор ООО «ИТ Консалтинг»</p>
+                </div>
+                <span class="all-reviews__badge">✓ Проверено договором</span>
+              </div>
+              <p class="all-reviews__text">
+                «Обратились в «ЮрГарант» при возникновении серьезного спора с подрядчиком по разработке программного обеспечения. Юристы компании оперативно провели аудит договора, составили грамотную претензию и в досудебном порядке вернули аванс в размере 14,8 млн рублей.»
+              </p>
+              <div class="all-reviews__meta">Дело № А40-184920/2025 • Спор урегулирован до суда</div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="all-reviews__item" data-category="business">
+              <div class="all-reviews__item-top">
+                <img class="all-reviews__avatar" src="images/reviews/Rectangle 28 (1).webp" alt="Макаров Сергей" />
+                <div class="all-reviews__author">
+                  <div class="all-reviews__stars">★★★★★</div>
+                  <h4 class="all-reviews__name">Макаров Сергей</h4>
+                  <p class="all-reviews__role">Финансовый директор АО «ПРОММАШ»</p>
+                </div>
+                <span class="all-reviews__badge">✓ Проверено договором</span>
+              </div>
+              <p class="all-reviews__text">
+                «Юристы сопровождали сделку по приобретению производственно-складского комплекса. В процессе Due Diligence выявили скрытые обременения и залоги в пользу третьих лиц, о которых продавец умолчал. Это уберегло компанию от колоссальных убытков.»
+              </p>
+              <div class="all-reviews__meta">Аудит сделки M&A • Защита активов на 85 млн руб.</div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="all-reviews__item" data-category="personal">
+              <div class="all-reviews__item-top">
+                <img class="all-reviews__avatar" src="images/reviews/client-voronova.webp" alt="Воронова Елена" />
+                <div class="all-reviews__author">
+                  <div class="all-reviews__stars">★★★★★</div>
+                  <h4 class="all-reviews__name">Воронова Елена</h4>
+                  <p class="all-reviews__role">Частный доверитель (г. Москва)</p>
+                </div>
+                <span class="all-reviews__badge">✓ Проверено договором</span>
+              </div>
+              <p class="all-reviews__text">
+                «После закрытия бизнеса осталась с неподъемными кредитами. Огромное человеческое спасибо Александру Германовичу за поддержку и ведение процедуры банкротства. Все долги (1,9 млн рублей) были полностью списаны арбитражным судом за 7 месяцев, квартира осталась в собственности.»
+              </p>
+              <div class="all-reviews__meta">Дело № А41-72941/2025 • Полное списание долга</div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="all-reviews__item" data-category="business">
+              <div class="all-reviews__item-top">
+                <img class="all-reviews__avatar" src="images/reviews/client-belov.webp" alt="Белов Роман" />
+                <div class="all-reviews__author">
+                  <div class="all-reviews__stars">★★★★★</div>
+                  <h4 class="all-reviews__name">Белов Роман</h4>
+                  <p class="all-reviews__role">Индивидуальный предприниматель</p>
+                </div>
+                <span class="all-reviews__badge">✓ Проверено договором</span>
+              </div>
+              <p class="all-reviews__text">
+                «Помогли оспорить незаконное доначисление налогов на сумму 3,4 миллиона рублей. Юристы вели диалог с налоговой инспекцией корректно, уверенно и строго по закону. В итоге решение инспекции было полностью отменено в вышестоящем налоговом органе.»
+              </p>
+              <div class="all-reviews__meta">Налоговый аудит • Доначисления аннулированы</div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="all-reviews__item" data-category="personal">
+              <div class="all-reviews__item-top">
+                <img class="all-reviews__avatar" src="images/reviews/client-voronova.webp" alt="Орлова Татьяна" />
+                <div class="all-reviews__author">
+                  <div class="all-reviews__stars">★★★★★</div>
+                  <h4 class="all-reviews__name">Орлова Татьяна</h4>
+                  <p class="all-reviews__role">Спор со страховой компанией (г. Красногорск)</p>
+                </div>
+                <span class="all-reviews__badge">✓ Проверено договором</span>
+              </div>
+              <p class="all-reviews__text">
+                «Страховая компания отказала в выплате по КАСКО после серьезного ДТП, сославшись на формальный пункт договора. Юрист провел независимую экспертизу, обратился в суд и взыскал не только полную стоимость ремонта 1,1 млн руб., но и штраф 50% с неустойкой.»
+              </p>
+              <div class="all-reviews__meta">Гражданский спор • Выплата 1 650 000 ₽</div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="all-reviews__item" data-category="business">
+              <div class="all-reviews__item-top">
+                <img class="all-reviews__avatar" src="images/reviews/client-belov.webp" alt="Кузнецов Игорь" />
+                <div class="all-reviews__author">
+                  <div class="all-reviews__stars">★★★★★</div>
+                  <h4 class="all-reviews__name">Кузнецов Игорь</h4>
+                  <p class="all-reviews__role">Совладелец логистической компании «НордТранс»</p>
+                </div>
+                <span class="all-reviews__badge">✓ Проверено договором</span>
+              </div>
+              <p class="all-reviews__text">
+                «Благодарен Полине Алексеевне за разрешение корпоративного конфликта между учредителями. Ситуация грозила парализацией операционной деятельности компании. Благодаря четкой правовой позиции нам удалось сохранить долю и подписать мировое соглашение.»
+              </p>
+              <div class="all-reviews__meta">Корпоративный спор • Мировое соглашение</div>
+            </div>
+          </div>
+
+          <div class="all-reviews__footer">
+            <button class="button button--submit" id="writeReviewFromAllBtn" type="button">
+              Оставить свой отзыв
+            </button>
           </div>
         </div>
       </dialog>
