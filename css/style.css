@@ -2351,10 +2351,28 @@ button {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-height: 380px;
+  max-height: 480px;
   overflow-y: auto;
-  padding-right: 6px;
+  padding-right: 8px;
   margin-bottom: 24px;
+}
+
+.all-reviews__list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.all-reviews__list::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+  border-radius: 4px;
+}
+
+.all-reviews__list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.all-reviews__list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .all-reviews__item {
