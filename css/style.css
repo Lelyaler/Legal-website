@@ -522,13 +522,15 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1.03) translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
   transition: opacity 0.9s ease-in-out, transform 5s ease-out;
 }
 
 .intro__bg-slide.active {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
 }
 
 /* Mobile-first: mobile images by default for minimal payload */
