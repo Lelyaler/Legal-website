@@ -40,40 +40,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  let scrollTicking = false;
   function handleHeaderScroll() {
-    if (!header) return;
-    if (window.scrollY > 30) {
-      header.classList.add('header--scrolled');
-    } else {
-      header.classList.remove('header--scrolled');
+    if (!scrollTicking) {
+      window.requestAnimationFrame(function () {
+        if (header) {
+          if (window.scrollY > 30) {
+            header.classList.add('header--scrolled');
+          } else {
+            header.classList.remove('header--scrolled');
+          }
+        }
+        scrollTicking = false;
+      });
+      scrollTicking = true;
     }
   }
   window.addEventListener('scroll', handleHeaderScroll, { passive: true });
   handleHeaderScroll();
 
-  // Active navigation highlight based on scroll position
+  // Active navigation highlight based on IntersectionObserver (zero forced reflows)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.header__menu .menu__link');
 
-  function updateActiveNavLink() {
-    const scrollY = window.pageYOffset + 120;
-    sections.forEach(function (section) {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach(function (link) {
-          if (link.getAttribute('href') === '#' + sectionId) {
-            link.classList.add('menu__link-active');
-          } else {
-            link.classList.remove('menu__link-active');
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const navObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('id');
+            navLinks.forEach(function (link) {
+              if (link.getAttribute('href') === '#' + sectionId) {
+                link.classList.add('menu__link-active');
+              } else {
+                link.classList.remove('menu__link-active');
+              }
+            });
           }
         });
-      }
+      },
+      { rootMargin: '-20% 0px -60% 0px', threshold: 0.1 }
+    );
+
+    sections.forEach(function (sec) {
+      navObserver.observe(sec);
     });
   }
-  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
 
   // =========================================================================
   // 2. Hero Interactive Slides with Background Transitions & Autoplay
